@@ -1,0 +1,204 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+body {
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
+}
+div {
+  box-sizing: border-box;
+}
+
+.card-container {
+  margin: 20px auto;
+  width: 80%;
+}
+
+.ant-card-body {
+  padding: 0px !important;
+}
+
+.left-block {
+  width: 66.66%;
+  padding: 1rem 2rem;
+}
+
+.right-block {
+  width: 33.33%;
+  background-color: #f9fafb;
+}
+
+.font-size-title {
+  font-size: 1.25rem;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.font-weight { 
+  font-weight: 500;
+}
+
+.left-block sup {
+  font-weight: bold !important; 
+}
+
+.left-block button {
+  border: 0px;
+  border-radius: 0px !important;
+  font-weight: 500;
+}
+
+.left-block .action-tab-btn {
+  color: #0084c7;
+}
+
+.action-tab-btn:after {
+  content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #0084c7;
+    bottom: -2px;
+    z-index: 1;
+    left: 0;
+}
+
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.mt-3 {
+  margin-top:3rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.ml-2 {
+  margin-left: 2rem;
+}
+
+.left-block .tab-title {
+  border-bottom: 2px solid #e5e7eb;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.table-tab-left .content {
+  margin-top: 3rem;
+}
+
+.color-blue{
+  color: #0569a0;
+}
+
+.color-blue-bold {
+  color: #065985;
+}
+
+.table-tab-left table tr td:nth-child(2) {
+  text-align: right;
+
+}
+
+.color-none-value {
+  color: #71717a
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+
+.right-block {
+  padding: 2rem 1.5rem 3rem;
+}
+
+.ant-input-number {
+  width: 100%;
+}
+
+.btn-green {
+  border: 0px;
+  padding: 0rem 1.25rem;
+  background-color: #a3e635;
+}
+
+.right-block table td>span {
+  color: #a6a6ae;
+}
+
+
+.status-contain span{
+  margin-right: 0.75rem;
+}
+
+.block {
+  display: block;
+}
+
+/* table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  text-align: left;
+  border-bottom: 1px solid #DDD;
+
+}
+td, th {
+  padding-bottom:1rem;
+
+}
+
+table caption {
+  text-align: left;
+    color: #3f3f46;
+    font-weight: 600;
+    font-size: large
+}
+
+.right-block table td {
+  padding-top: 1rem;
+}
+
+@media only screen and (max-width: 1025px) {
+  /* For tablets: */
+  .main-container {
+    flex-direction: column;
+  }
+
+  .right-block, .left-block {
+    width: 100%;
+  }
+
+}
