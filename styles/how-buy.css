@@ -1,0 +1,62 @@
+.how-buy {
+  padding: 180px 0 80px;
+}
+
+.how-buy__intro {
+  width: 590px;
+  margin: auto;
+}
+
+.how-buy__title {
+  font-size: 40px;
+  line-height: 48.76px;
+  color: #000D22;
+}
+
+.how-buy__desc {
+  margin-top: 20px;
+  color: #6C7E99;
+  font-size: 16px;
+  line-height: 19.09px;
+  font-weight: 300;
+}
+
+.how-buy__logo {
+  padding-top: 120px;
+}
+
+.how-buy__item {
+  width: 285px;
+  margin: auto;
+  display: block;
+  margin-top: 35px;
+}
+
+.how-buy__title-item, .how-buy__desc-item {
+  width: 100%;
+}
+
+.how-buy__title-item {
+  padding: 32px 0 12px;
+  font-size: 16px;
+  line-height: 19.5px;
+  color: #273447;
+  font-weight: 700;
+}
+
+.how-buy__desc-item {
+  color: #6C7E99;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.how-buy__item-container::nth-child(2) {
+  margin-top: 100%;
+}
+
+.how-buy__main-container {
+  background-image: url('/bg-buy-token.png');
+  background-size: 922px 190px;
+  background-repeat: no-repeat;
+  background-position: center 0px;
+}

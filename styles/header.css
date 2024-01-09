@@ -1,0 +1,50 @@
+* {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.header {
+    padding: 40px 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header__text-logo {
+    font-weight: bold;
+    color: #552D8E;
+}
+
+.menu, .header__right {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.header__right {
+    text-align: right;
+    justify-content: end;
+}
+
+.header__menu {
+    width: 100%;
+}
+
+.header__item-menu {
+    display: inline-block;
+    padding: 0 30px;
+}
+
+.btn__connect-wallet {
+    padding: 6px 20px;
+}
+
+.header__btn-connect-wallet {
+    color: #552D8E;
+}

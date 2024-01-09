@@ -33,13 +33,16 @@ const HeaderBlock = () => {
           </a>
         </Flex>
       </Col>
-      <Col span={6} pull={18}>
+      <Col span={6} pull={18} className='text-center'>
         <img
-          src='https://presale.world/_next/image?url=https%3A%2F%2Fimagedelivery.net%2FkRBCQzvwK7zwoBSRz37l_g%2Fd8f7fb74-7cc9-4ef2-9640-7782dd528800%2Fpublic&w=3840&q=75'
+          src='/logo.png'
           alt='icon'
           width='96px'
           height='96px'
         />
+        <h3 className="text-uppercase">
+          Studily
+        </h3>
       </Col>
     </Row>
   );

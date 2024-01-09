@@ -1,0 +1,36 @@
+.banner__intro {
+  display: flex;
+  align-items: center;
+  width: 590px;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.banner__title {
+  width: 100%;
+  font-size: 48px;
+  line-height: 58.51px;
+  color: #000D22;
+}
+
+.banner__title strong {
+  font-size: 48px;
+  line-height: 58.51px;
+  color: #552D8E;
+}
+
+.banner__desc {
+  font-size: 16px;
+  line-height: 19.06px;
+  color: #6C7E99;
+  margin-top: 20px;
+}
+
+.banner__btn-white-paper {
+  padding: 14px 38.5px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  margin-top: 60px;
+  background: linear-gradient(90deg, #AD5389 -12.5%, #3C1053 102.62%);
+}
