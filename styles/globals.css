@@ -56,3 +56,40 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.footer__menu {
+  list-style: none;
+  width: 100%;
+  text-align: right;
+}
+
+.footer__item-menu {
+  display: inline-block;
+  padding: 0 30px;
+}
+
+.footer__menu.\--bottom .footer__item-menu {
+  padding: 0;
+}
+
+.footer__menu.\--bottom .footer__item-menu a {
+  display: block;
+  width: 100%;
+  padding: 0 12px;
+  border-right: 1px solid #C6D2E1;
+}
+
+.footer__top {
+  padding-bottom: 40px;
+}
+
+.footer__copyright {
+  padding-top: 40px;
+  border-top: 1px solid #97A5BD;
+}

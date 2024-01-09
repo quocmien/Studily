@@ -6,7 +6,7 @@ return (
         <div className="col-span-3">
           <div className="header__logo text-center w-[60px]">
             <img width="60px" height="60px" src="/logo.png" alt="Studily" className="logo" />
-            <h3 className="uppercase">
+            <h3 className="uppercase header__text-logo color-primary">
               Studily
             </h3>
           </div>

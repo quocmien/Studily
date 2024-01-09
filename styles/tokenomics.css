@@ -1,0 +1,30 @@
+.tokenomics {
+  padding: 80px 0;
+}
+
+.tokenomics__intro {
+  width: 590px;
+}
+
+.tokenomics__title {
+  font-size: 40px;
+  line-height: 48.76px;
+  font-weight: 700;
+  color: #000D22;
+}
+
+.tokenomics__desc {
+  margin-top: 20px;
+  counter-reset: #6C7E99;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19.06px;
+  margin-bottom: 80px;
+}
+
+.tokenomics__content {
+  background-image: url('/Tokenomics.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

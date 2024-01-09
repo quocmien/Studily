@@ -1,7 +1,7 @@
 .banner__intro {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 590px;
   flex-wrap: wrap;
   height: 100%;
 }
@@ -32,4 +32,5 @@
   line-height: 20px;
   font-weight: 700;
   margin-top: 60px;
+  background: linear-gradient(90deg, #AD5389 -12.5%, #3C1053 102.62%);
 }

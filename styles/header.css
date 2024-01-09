@@ -10,6 +10,17 @@
     align-items: center;
 }
 
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header__text-logo {
+    font-weight: bold;
+    color: #552D8E;
+}
+
 .menu, .header__right {
     display: flex;
     width: 100%;

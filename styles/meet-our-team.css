@@ -1,0 +1,66 @@
+.meet-our-team {
+  padding: 80px 0;
+}
+
+.meet-our-team__intro {
+  width: 590px;
+  margin: auto;
+}
+
+.meet-our-team__title {
+  font-size: 40px;
+  line-height: 48.76px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.meet-our-team__desc {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 19.06px;
+  color: #6C7E99;
+}
+
+.meet-our-team__item-logo {
+  width: 180px;
+  height: 180px;
+}
+
+.meet-our-team__item  {
+  position: relative;
+}
+
+.meet-our-team__item.\--left {
+  height: 100%;
+}
+
+.meet-our-team__item.\--left img {
+  height: 100%;
+}
+
+.meet-our-team__item.\--logo {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.meet-our-team__intro-item {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 17.5px;
+}
+
+.meet-out-team__name-team {
+  font-size: 16px;
+  line-height: 19.5px;
+  font-weight: 700;
+}
+
+.meet-out-team__position {
+  font-size: 14px;
+  line-height: 17.07px;
+  color: #97A5BD;
+}
