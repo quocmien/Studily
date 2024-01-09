@@ -1,0 +1,83 @@
+.card-count-down {
+  background: linear-gradient(180deg, rgba(173, 83, 137, 0.16) 0%, rgba(60, 16, 83, 0.8) 107.96%);
+  box-shadow: 0px 4px 15px 0px #552D8E33;
+  box-shadow: 0px 3px 14px 0px #552D8E1F;
+  box-shadow: 0px 8px 10px 0px #552D8E24;
+  border-radius: 20px;
+}
+
+.card__title-header {
+  margin-bottom: 8px;
+}
+
+.card__time {
+  font-size: 32px;
+  line-height: 70px;
+  position: relative;
+  color: #fff;
+}
+
+.card__text-time {
+  font-size: 13px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.card__count-down {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.card__item-count-down {
+  flex: 1;
+  position: relative;
+}
+
+.card__time::after {
+  content: '';
+  width: 1px;
+  height: 16px;
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 8px);
+}
+
+.card__item-count-down:last-child .card__time::after {
+  background-color: transparent;
+}
+
+.card__progress {
+}
+
+.card__progress-title {
+  font-size: 16px;
+  line-height: 19.5px;
+  font-weight: 600;
+  color: #000D22;
+}
+
+.card__token-info {
+  color: #fff;
+  margin-top: 40px;
+}
+
+.card__item-token-info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.card__token-label {
+  width: 100px;
+}
+
+.card__btn-buy {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+}

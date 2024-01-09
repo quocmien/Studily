@@ -1,17 +1,13 @@
 import { Card, Flex } from 'antd';
-import LeftBlock from '../components/LeftBlock';
-import RightBlock from '../components/RightBlock';
+import BannerHome from '../components/home/BannerHome';
+import Advisor from '../components/home/Advisor'
 
 const MainPage = () => {
   return (
-    <Card bordered={false} className="card-container">
-      <Flex className="main-container" gap="middle">
-        <LeftBlock />
-        <div className="right-block">
-          <RightBlock />
-        </div>
-      </Flex>
-    </Card>
+    <div className="page-home">
+      <BannerHome />
+      <Advisor />
+    </div>
   );
 };
 

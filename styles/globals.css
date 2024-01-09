@@ -1,204 +1,58 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
-body {
-  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
-}
-div {
-  box-sizing: border-box;
-}
 
-.card-container {
-  margin: 20px auto;
-  width: 80%;
-}
-
-.ant-card-body {
-  padding: 0px !important;
-}
-
-.left-block {
-  width: 66.66%;
-  padding: 1rem 2rem;
-}
-
-.right-block {
-  width: 33.33%;
-  background-color: #f9fafb;
-}
-
-.font-size-title {
-  font-size: 1.25rem;
-}
-
-.text-uppercase {
-  text-transform: uppercase;
-}
-
-.font-weight { 
-  font-weight: 500;
-}
-
-.left-block sup {
-  font-weight: bold !important; 
-}
-
-.left-block button {
-  border: 0px;
-  border-radius: 0px !important;
-  font-weight: 500;
-}
-
-.left-block .action-tab-btn {
-  color: #0084c7;
-}
-
-.action-tab-btn:after {
-  content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: #0084c7;
-    bottom: -2px;
-    z-index: 1;
-    left: 0;
-}
-
-
-.mr-8 {
-  margin-right: 8px;
-}
-
-.mt-3 {
-  margin-top:3rem;
-}
-
-.mb-1 {
-  margin-bottom: 1rem;
-}
-
-.mt-1 {
-  margin-top: 1rem;
-}
-
-.ml-1 {
-  margin-left: 1rem;
-}
-
-.ml-2 {
-  margin-left: 2rem;
-}
-
-.left-block .tab-title {
-  border-bottom: 2px solid #e5e7eb;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.table-tab-left .content {
-  margin-top: 3rem;
-}
-
-.color-blue{
-  color: #0569a0;
-}
-
-.color-blue-bold {
-  color: #065985;
-}
-
-.table-tab-left table tr td:nth-child(2) {
-  text-align: right;
-
-}
-
-.color-none-value {
-  color: #71717a
-}
-
-.text-underline {
-  text-decoration: underline;
-}
-
-.cursor {
-  cursor: pointer;
-}
-
-
-.right-block {
-  padding: 2rem 1.5rem 3rem;
-}
-
-.ant-input-number {
-  width: 100%;
-}
-
-.btn-green {
-  border: 0px;
-  padding: 0rem 1.25rem;
-  background-color: #a3e635;
-}
-
-.right-block table td>span {
-  color: #a6a6ae;
-}
-
-
-.status-contain span{
-  margin-right: 0.75rem;
-}
-
-.block {
-  display: block;
-}
-
-/* table */
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td {
-  text-align: left;
-  border-bottom: 1px solid #DDD;
-
-}
-td, th {
-  padding-bottom:1rem;
-
-}
-
-table caption {
-  text-align: left;
-    color: #3f3f46;
-    font-weight: 600;
-    font-size: large
-}
-
-.right-block table td {
-  padding-top: 1rem;
-}
-
-@media only screen and (max-width: 1025px) {
-  /* For tablets: */
-  .main-container {
-    flex-direction: column;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 265 68% 56%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0rem;
   }
 
-  .right-block, .left-block {
-    width: 100%;
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
   }
+}
 
+body {
+  background-image: url('/bg-landing.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
