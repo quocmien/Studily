@@ -11,15 +11,21 @@ const MeetOurTeam = () => {
           </p>
         </div>
 
-        <div className="meet-our-team__list grid grid-cols-12 gap-[10px] md:gap-[20px] mt-[25px] md:mt-[112px]">
+        <div className="meet-our-team__list w-full grid grid-cols-12 gap-[10px] md:gap-[20px] mt-[25px] md:mt-[112px]">
           <div className="block md:hidden col-span-12">
             <div className="meet-our-team__item --logo">
               <img className="meet-our-team__item-logo m-auto" src="/logo-black.png" alt="Studily" />
             </div>
           </div>
           <div className="col-span-6 md:col-span-4">
-            <div className="meet-our-team__item --left">
-              <img src="/mr-david.png" alt="Mr.David" />
+            <div
+              className="meet-our-team__item --left w-full --mobile"
+              style={
+                {
+                  backgroundImage: "url('/mr-david.png')"
+                }
+              }
+            >
               <div className="meet-our-team__intro-item">
                 <h3 className="meet-out-team__name-team color-white">
                   Mr.David
@@ -31,15 +37,19 @@ const MeetOurTeam = () => {
             </div>
           </div>
           <div className="col-span-6 md:col-span-8">
-            <div className="md:grid md:grid-cols-12 flex flex-wrap gap-[20px] mb-[10px] md:mb-[20px]">
+            <div className="md:grid md:grid-cols-12 flex flex-wrap gap-[20px] mb-[10px] md:mb-[20px] w-full">
               <div className="hidden md:block col-span-12 md:col-span-4">
                 <div className="meet-our-team__item --logo">
                   <img className="meet-our-team__item-logo m-auto" src="/logo-black.png" alt="Studily" />
                 </div>
               </div>
-              <div className="col-span-12 md:col-span-4">
-                <div className="meet-our-team__item">
-                  <img src="/ms-david.png" alt="Ms.David" />
+              <div className="col-span-12 md:col-span-4 w-full">
+                <div className="meet-our-team__item --mobile"
+                  style={
+                    {
+                      backgroundImage: "url('/ms-david.png')"
+                    }
+                  }>
                   <div className="meet-our-team__intro-item">
                     <h3 className="meet-out-team__name-team color-white">
                       Mr.David
@@ -51,9 +61,15 @@ const MeetOurTeam = () => {
                 </div>
               </div>
 
-              <div className="col-span-12 md:col-span-4">
-                <div className="meet-our-team__item">
-                  <img src="/ms-david.png" alt="Ms.David" />
+              <div className="col-span-12 md:col-span-4 w-full">
+                <div
+                  className="meet-our-team__item --mobile"
+                  style={
+                    {
+                      backgroundImage: "url('/ms-david.png')"
+                    }
+                  }
+                >
 
                   <div className="meet-our-team__intro-item">
                     <h3 className="meet-out-team__name-team color-white">
