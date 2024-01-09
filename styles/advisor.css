@@ -4,7 +4,7 @@
 
 .advisor {
   padding: 30px 0;
-  margin: 100px 0;
+  margin: 50px 0;
 }
 
 .advisor__container {
@@ -17,4 +17,11 @@
 
 .advisor__item img {
   margin: auto;
+}
+
+@media (min-width: 991px) {
+  .advisor {
+    padding: 30px 0;
+    margin: 100px 0;
+  }
 }

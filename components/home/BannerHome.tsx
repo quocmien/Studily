@@ -3,7 +3,7 @@ const BannerHome = () => {
   return (
     <div className="container">
       <div className="grid grid-cols-12">
-        <div className="col-span-8">
+        <div className="col-span-12 md:col-span-8">
           <div className="banner__intro">
             <div className="banner__intro-contain">
               <h3 className="banner__title">
@@ -22,7 +22,7 @@ const BannerHome = () => {
           </div>
         </div>
 
-        <div className="col-span-4">
+        <div className="col-span-12 md:col-span-4">
           <CardCountDown />
         </div>
       </div>

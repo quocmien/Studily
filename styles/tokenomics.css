@@ -1,9 +1,19 @@
 .tokenomics {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .tokenomics__intro {
-  width: 590px;
+  width: 100%;
+}
+
+@media (min-width: 991px) {
+  .tokenomics__intro {
+    width: 590px;
+  }
+
+  .tokenomics {
+    padding: 80px 0;
+  }
 }
 
 .tokenomics__title {

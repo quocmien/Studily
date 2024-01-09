@@ -1,10 +1,20 @@
 .how-buy {
-  padding: 180px 0 80px;
+  padding: 40px 0;
 }
 
 .how-buy__intro {
-  width: 590px;
+  width: 100%;
   margin: auto;
+}
+
+@media (min-width: 991px) {
+  .how-buy__intro {
+    width: 590px;
+  }
+
+  .how-buy {
+    padding: 180px 0 80px;
+  }
 }
 
 .how-buy__title {
@@ -54,9 +64,11 @@
   margin-top: 100%;
 }
 
-.how-buy__main-container {
-  background-image: url('/bg-buy-token.png');
-  background-size: 922px 190px;
-  background-repeat: no-repeat;
-  background-position: center 0px;
+@media (min-width: 991px) {
+  .how-buy__main-container {
+    background-image: url('/bg-buy-token.png');
+    background-size: 922px 190px;
+    background-repeat: no-repeat;
+    background-position: center 0px;
+  }
 }

@@ -1,6 +1,6 @@
 const CardCountDown = () => {
   return (
-    <div className="card card-count-down shadow p-[32px] rounded-[20px]">
+    <div className="card card-count-down shadow p-[32px] rounded-[20px] w-full mt-[25px] md:mt-0">
       <div className="card__header">
         <h3 className="font-bold card__title-header">
           Studily Token is on presale
