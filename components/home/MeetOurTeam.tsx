@@ -97,37 +97,50 @@ const MeetOurTeam = () => {
               </div>
             </div>
           </div>
-
+        </div>
+        <div className="block md:hidden mt-[10px] gird grid-cols-12">
           <div className="md:hidden flex col-span-12 grid grid-cols-12 gap-[20px]">
-              <div className="col-span-6 md:col-span-7">
-                <div className="meet-our-team__item h-full">
-                  <img className="h-full" src="/ceo.png" alt="CEO" />
+            <div className="col-span-6 md:col-span-7">
+              <div
+                className="meet-our-team__item --mobile"
+                style={
+                  {
+                    backgroundImage: "url('/ceo.png')"
+                  }
+                }
+              >
 
-                  <div className="meet-our-team__intro-item">
-                    <h3 className="meet-out-team__name-team color-white">
-                      Mr.David
-                    </h3>
-                    <span className="meet-out-team__position">
-                      Founder, CEO
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-span-6 md:col-span-5">
-                <div className="meet-our-team__item">
-                  <img src="/founder.png" alt="founder" />
-                  <div className="meet-our-team__intro-item">
-                    <h3 className="meet-out-team__name-team color-white">
-                      Mr.David
-                    </h3>
-                    <span className="meet-out-team__position">
-                      Founder, CEO
-                    </span>
-                  </div>
+                <div className="meet-our-team__intro-item">
+                  <h3 className="meet-out-team__name-team color-white">
+                    Mr.David
+                  </h3>
+                  <span className="meet-out-team__position">
+                    Founder, CEO
+                  </span>
                 </div>
               </div>
             </div>
+
+            <div className="col-span-6 md:col-span-5">
+              <div
+                className="meet-our-team__item --mobile"
+                style={
+                  {
+                    backgroundImage: "url('/founder.png')"
+                  }
+                }
+              >
+                <div className="meet-our-team__intro-item">
+                  <h3 className="meet-out-team__name-team color-white">
+                    Mr.David
+                  </h3>
+                  <span className="meet-out-team__position">
+                    Founder, CEO
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

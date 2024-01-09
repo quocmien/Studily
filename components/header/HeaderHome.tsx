@@ -1,6 +1,8 @@
 "use client"
+import { Alert, Button, Flex, InputNumber, Progress } from 'antd';
 import { useMemo, useState } from 'react';
 import {
+  useAddress,
   useContract,
   Web3Button,
 } from '@thirdweb-dev/react';
@@ -8,7 +10,9 @@ import {
 const HeaderHome = () => {
   const tokenAddress = '0x56E4F14f6aB7d5Fc9eEE4b01CCdD761583F13B6F';
   const { contract } = useContract(tokenAddress, 'token-drop');
+  const address = useAddress();
   const [quantity, setQuantity] = useState(1);
+
   return (
     <header className="header">
       <div className="container">
