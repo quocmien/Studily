@@ -21,6 +21,10 @@
     width: 180px;
     height: 180px;
   }
+
+  .meet-our-team__item.\--left img {
+    height: 100%;
+  }
   
 }
 
@@ -46,13 +50,10 @@
 
 .meet-our-team__item  {
   position: relative;
+  overflow: hidden;
 }
 
 .meet-our-team__item.\--left {
-  height: 100%;
-}
-
-.meet-our-team__item.\--left img {
   height: 100%;
 }
 
@@ -81,4 +82,8 @@
   font-size: 14px;
   line-height: 17.07px;
   color: #97A5BD;
+}
+
+.meet-our-team__item.\--left img {
+  height: 100%;
 }

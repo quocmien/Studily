@@ -1,3 +1,15 @@
+import {
+  useActiveClaimConditionForWallet,
+  useAddress,
+  useClaimConditions,
+  useClaimerProofs,
+  useClaimIneligibilityReasons,
+  useContract,
+  useContractMetadata,
+  useTokenSupply,
+  Web3Button,
+} from '@thirdweb-dev/react';
+
 const HeaderHome = () => {
 return (
   <header className="header">
@@ -30,9 +42,9 @@ return (
         </div>
 
         <div className="col-span-7 md:col-span-3 header__right">
-          <button className="header__btn-connect-wallet outline button outline-primary outline-[1px] rounded-[6px] btn__connect-wallet font-bold color-primary">
+          <Web3Button className="header__btn-connect-wallet outline button outline-primary border outline-[1px] rounded-[6px] btn__connect-wallet font-bold color-primary">
             Connect wallet
-          </button>
+          </Web3Button>
         </div>
       </div>
     </div>

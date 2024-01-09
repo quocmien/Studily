@@ -42,9 +42,11 @@
 }
 
 .btn__connect-wallet {
-    padding: 6px 20px;
+    padding: 6px 20px !important;
 }
 
 .header__btn-connect-wallet {
-    color: #552D8E;
+    color: #552D8E !important;
+    border: 1px solid #552D8E !important;
+    border-radius: 6px !important;
 }
