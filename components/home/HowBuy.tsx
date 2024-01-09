@@ -18,7 +18,7 @@ const HowBuy = () => {
         </div>
 
         <div className="how-buy__main-container mt-[40px] grid grid-cols-12">
-          <div className="col-span-4 how-buy__item-container">
+          <div className="col-span-12 md:col-span-4 how-buy__item-container">
             <div className="how-buy__item">
               <div className="how-buy__icon">
                 <img className="m-auto" src="/add-user.png" alt="user" />
@@ -34,7 +34,7 @@ const HowBuy = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-4 how-buy__item-container mt-[172px] ml-[20px]">
+          <div className="col-span-12 md:col-span-4 how-buy__item-container md:mt-[172px] md:ml-[20px]">
             <div className="how-buy__item">
               <div className="how-buy__icon">
                 <img className="m-auto" src="/wallet.png" alt="wallet" />
@@ -50,7 +50,7 @@ const HowBuy = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-4 how-buy__item-container">
+          <div className="col-span-12 md:col-span-4 how-buy__item-container">
             <div className="how-buy__item">
               <div className="how-buy__icon">
                 <img className="m-auto" src="/buy-token.png" alt="buy token" />

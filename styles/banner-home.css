@@ -1,9 +1,15 @@
 .banner__intro {
   display: flex;
   align-items: center;
-  width: 590px;
   flex-wrap: wrap;
   height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 991px) {
+  .banner__intro {
+    width: 590px;
+  }
 }
 
 .banner__title {
