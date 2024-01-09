@@ -1,6 +1,6 @@
 const CardCountDown = () => {
   return (
-    <div className="card card-count-down shadow p-[32px] rounded-[20px] w-full mt-[25px] md:mt-0">
+    <div className="card card-count-down shadow p-[15px] md:p-[32px] rounded-[20px] w-full mt-[25px] md:mt-0">
       <div className="card__header">
         <h3 className="font-bold card__title-header">
           Studily Token is on presale
@@ -24,7 +24,7 @@ const CardCountDown = () => {
             20
           </p>
           <span className="card__text-time">
-            Days
+            Hours
           </span>
         </div>
         <div className="card__item-count-down">
@@ -32,7 +32,7 @@ const CardCountDown = () => {
             20
           </p>
           <span className="card__text-time">
-            Days
+            Minutes
           </span>
         </div>
         <div className="card__item-count-down">
@@ -40,7 +40,7 @@ const CardCountDown = () => {
             20
           </p>
           <span className="card__text-time">
-            Days
+            Seconds
           </span>
         </div>
       </div>
