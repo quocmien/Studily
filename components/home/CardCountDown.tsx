@@ -157,22 +157,6 @@ const CardCountDown = () => {
     return () => clearTimeout(timer);
   });
 
-  const timerComponents = Object.keys(timeLeft).map((interval) => {
-    if (!timeLeft[`${interval}`]) {
-      return null;
-    }
-
-    return (
-        <div className="card__item-count-down" key={interval}>
-          <p className="card__time">
-          {timeLeft[interval]}
-          </p>
-          <span className="card__text-time">
-            {interval} {' '}
-          </span>
-        </div>
-    );
-  });
 
 
   return (
@@ -185,13 +169,40 @@ const CardCountDown = () => {
           Studily token ends in February 29, 2024
         </p>
       </div>
-      <div className="card__count-down flex">
 
-        {timerComponents.length ? (
-          timerComponents
-        ) : (
-          <span>Countdown Complete!</span>
-        )}
+      <div className="card__count-down flex">
+        <div className="card__item-count-down">
+          <p className="card__time">
+          {timeLeft.days}
+          </p>
+          <span className="card__text-time">
+            Days
+          </span>
+        </div>
+        <div className="card__item-count-down">
+          <p className="card__time">
+          {timeLeft.hours}
+          </p>
+          <span className="card__text-time">
+            Hours
+          </span>
+        </div>
+        <div className="card__item-count-down">
+          <p className="card__time">
+          {timeLeft.minutes}
+          </p>
+          <span className="card__text-time">
+            Minutes
+          </span>
+        </div>
+        <div className="card__item-count-down">
+          <p className="card__time">
+          {timeLeft.seconds}
+          </p>
+          <span className="card__text-time">
+            Seconds
+          </span>
+        </div>
       </div>
 
       <div className="card__progress">
