@@ -146,7 +146,7 @@ const CardCountDown = () => {
   });
 
   const timerComponents = Object.keys(timeLeft).map((interval) => {
-    if (!timeLeft[interval]) {
+    if (!timeLeft[`${interval}`]) {
       return null;
     }
 
