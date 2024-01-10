@@ -1,6 +1,6 @@
 "use client"
-import { Slider } from 'antd';
-import { InputNumber } from 'antd';
+
+import { Slider, Alert, Button, Flex, InputNumber, Progress } from 'antd';
 import { useMemo, useState, useEffect } from 'react';
 import { BigNumber, utils } from 'ethers';
 import {
@@ -14,40 +14,27 @@ import {
   useTokenSupply,
   Web3Button,
 } from '@thirdweb-dev/react';
+import { parseIneligibility } from '../../utils/parseIneligibility';
 
 const CardCountDown = () => {
   const tokenAddress = '0x56E4F14f6aB7d5Fc9eEE4b01CCdD761583F13B6F';
   const { contract } = useContract(tokenAddress, 'token-drop');
   const address = useAddress();
   const [quantity, setQuantity] = useState(1);
+  const { data: contractMetadata } = useContractMetadata(contract);
 
-  interface TimeLeft {
-    days: number | 1;
-    hours: number | 1;
-    minutes: number | 1;
-    seconds: number| 1;
-  }
-
-  const marks = {
-    50: {
-      style: {
-        color: '#fff',
-      },
-      label: <strong>50K BUSD</strong>,
-    },
-    100: {
-      style: {
-        color: '#fff',
-      },
-      label: <strong>100K BUSD</strong>,
-    }
-  };
-
+  const claimConditions = useClaimConditions(contract);
   const activeClaimCondition = useActiveClaimConditionForWallet(
     contract,
     address
   );
   const claimerProofs = useClaimerProofs(contract, address || '');
+  const claimIneligibilityReasons = useClaimIneligibilityReasons(contract, {
+    quantity,
+    walletAddress: address || '',
+  });
+
+  const claimedSupply = useTokenSupply(contract);
 
   const totalAvailableSupply = useMemo(() => {
     try {
@@ -56,6 +43,37 @@ const CardCountDown = () => {
       return BigNumber.from(1_000_000_000);
     }
   }, [activeClaimCondition.data?.availableSupply]);
+
+  const numberClaimed = useMemo(() => {
+    return BigNumber.from(claimedSupply.data?.value || 0).toString();
+  }, [claimedSupply]);
+
+  const numberTotal = useMemo(() => {
+    const n = totalAvailableSupply.add(
+      BigNumber.from(claimedSupply.data?.value || 0)
+    );
+    if (n.gte(1_000_000_000)) {
+      return '';
+    }
+    return n.toString();
+  }, [totalAvailableSupply, claimedSupply]);
+
+  const priceToMint = useMemo(() => {
+    if (quantity) {
+      const bnPrice = BigNumber.from(
+        activeClaimCondition.data?.currencyMetadata.value || 0
+      );
+      return `${utils.formatUnits(
+        bnPrice.mul(quantity).toString(),
+        activeClaimCondition.data?.currencyMetadata.decimals || 18
+      )} ${activeClaimCondition.data?.currencyMetadata.symbol}`;
+    }
+  }, [
+    activeClaimCondition.data?.currencyMetadata.decimals,
+    activeClaimCondition.data?.currencyMetadata.symbol,
+    activeClaimCondition.data?.currencyMetadata.value,
+    quantity,
+  ]);
 
   const maxClaimable = useMemo(() => {
     let bnMaxClaimable;
@@ -113,6 +131,78 @@ const CardCountDown = () => {
     activeClaimCondition.data?.maxClaimablePerWallet,
   ]);
 
+  const isSoldOut = useMemo(() => {
+    try {
+      return (
+        (activeClaimCondition.isSuccess &&
+          BigNumber.from(activeClaimCondition.data?.availableSupply || 0).lte(
+            0
+          )) ||
+        numberClaimed === numberTotal
+      );
+    } catch (e) {
+      return false;
+    }
+  }, [
+    activeClaimCondition.data?.availableSupply,
+    activeClaimCondition.isSuccess,
+    numberClaimed,
+    numberTotal,
+  ]);
+
+  const canClaim = useMemo(() => {
+    return (
+      activeClaimCondition.isSuccess &&
+      claimIneligibilityReasons.isSuccess &&
+      claimIneligibilityReasons.data?.length === 0 &&
+      !isSoldOut
+    );
+  }, [
+    activeClaimCondition.isSuccess,
+    claimIneligibilityReasons.data?.length,
+    claimIneligibilityReasons.isSuccess,
+    isSoldOut,
+  ]);
+
+  const isLoading = useMemo(() => {
+    return activeClaimCondition.isLoading || !contract;
+  }, [activeClaimCondition.isLoading, contract]);
+
+  const buttonLoading = useMemo(
+    () => isLoading || claimIneligibilityReasons.isLoading,
+    [claimIneligibilityReasons.isLoading, isLoading]
+  );
+  const buttonText = useMemo(() => {
+    if (isSoldOut) {
+      return 'Sold Out';
+    }
+
+    if (canClaim) {
+      const pricePerToken = BigNumber.from(
+        activeClaimCondition.data?.currencyMetadata.value || 0
+      );
+      if (pricePerToken.eq(0)) {
+        return 'Mint (Free)';
+      }
+      return `Mint (${priceToMint})`;
+    }
+    if (claimIneligibilityReasons.data?.length) {
+      return parseIneligibility(claimIneligibilityReasons.data, quantity);
+    }
+    if (buttonLoading) {
+      return 'Checking eligibility...';
+    }
+
+    return 'Claiming not available';
+  }, [
+    isSoldOut,
+    canClaim,
+    claimIneligibilityReasons.data,
+    buttonLoading,
+    activeClaimCondition.data?.currencyMetadata.value,
+    priceToMint,
+    quantity,
+  ]);
 
   const onMoneyChange = (e: any) => {
     const value = parseInt(e.target.value);
@@ -122,6 +212,28 @@ const CardCountDown = () => {
       setQuantity(1);
     } else {
       setQuantity(value);
+    }
+  };
+
+  interface TimeLeft {
+    days: number | 1;
+    hours: number | 1;
+    minutes: number | 1;
+    seconds: number| 1;
+  }
+
+  const marks = {
+    50: {
+      style: {
+        color: '#fff',
+      },
+      label: <strong>50K BUSD</strong>,
+    },
+    100: {
+      style: {
+        color: '#fff',
+      },
+      label: <strong>100K BUSD</strong>,
     }
   };
 
@@ -160,7 +272,10 @@ const CardCountDown = () => {
 
 
   return (
-    <div className="card card-count-down shadow p-[15px] md:p-[32px] rounded-[20px] w-full mt-[25px] md:mt-0">
+    <div className="card card-count-down shadow
+      p-[15px] md:p-[32px] rounded-[20px] w-full
+      mt-[25px] md:mt-0"
+    >
       <div className="card__header">
         <h3 className="font-bold card__title-header">
           Studily Token is on presale
@@ -259,7 +374,7 @@ const CardCountDown = () => {
           onSuccess={() => alert('Claimed!')}
           onError={(err) => alert(err)}
         >
-          Buy Token
+          {buttonText}
         </Web3Button>
       </div>
     </div>      
