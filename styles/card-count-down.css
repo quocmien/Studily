@@ -70,6 +70,12 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
+  width: 100% !important;
+  border: 1px solid #fff !important;
+  border-radius: 6px !important;
+  padding: 10px !important;
+  background-color: transparent !important;
+  color: #fff !important;
 }
 
 .card__time {
@@ -86,6 +92,18 @@
   color: #fff;
 }
 
+:where(.css-dev-only-do-not-override-dkbvqv).ant-slider-horizontal .ant-slider-track, :where(.css-dev-only-do-not-override-dkbvqv).ant-slider-horizontal .ant-slider-tracks {
+  background: linear-gradient(90deg, #AD5389 -12.5%, #3C1053 102.62%);
+}
+
+:where(.css-dev-only-do-not-override-dkbvqv).ant-slider-horizontal .ant-slider-rail,
+:where(.css-dev-only-do-not-override-dkbvqv).ant-slider-horizontal .ant-slider-track, :where(.css-dev-only-do-not-override-dkbvqv).ant-slider-horizontal .ant-slider-tracks {
+  height: 8px;
+}
+:where(.css-dev-only-do-not-override-dkbvqv).ant-slider-horizontal .ant-slider-step {
+  height: 8px;
+}
+
 @media (min-width: 991px) {
   .card__time {
     font-size: 32px;
@@ -97,4 +115,9 @@
     font-size: 13px;
     line-height: 20px;
   }
+}
+.ant-slider-mark-text {
+  top: 8px;
+  display: block;
+  width: 120px;
 }
