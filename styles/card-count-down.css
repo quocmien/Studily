@@ -121,3 +121,7 @@
   display: block;
   width: 120px;
 }
+
+.ant-slider-mark-text:last-child {
+  left: calc(100% - 30px) !important;
+}
