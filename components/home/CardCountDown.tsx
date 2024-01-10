@@ -21,6 +21,13 @@ const CardCountDown = () => {
   const address = useAddress();
   const [quantity, setQuantity] = useState(1);
 
+  interface TimeLeft {
+    days: number | 1;
+    hours: number | 1;
+    minutes: number | 1;
+    seconds: number| 1;
+  }
+
   const marks = {
     50: {
       style: {
@@ -121,7 +128,12 @@ const CardCountDown = () => {
 
   const calculateTimeLeft = () => {
     const difference = +new Date('2024-02-29T23:59:59') - +new Date();
-    let timeLeft = {};
+    let timeLeft: TimeLeft = {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    };
 
     if (difference > 0) {
       timeLeft = {
