@@ -11,7 +11,7 @@ const Tokenomics = () => {
           </p>
         </div>
 
-        <ul className="tokenomics__list mb-[20px]">
+        <ul className="tokenomics__list mb-[20px] block md:hidden">
           <li className="tokenomics__item-list">
             <span className="tokenomics__item-color bg-[#F57C00]"></span>
             <label className="tokenomics__item-label">Seed 3%</label>
