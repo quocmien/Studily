@@ -32,9 +32,38 @@
   margin-bottom: 80px;
 }
 
+.tokenomics__item-list {
+  display: inline-block;
+  margin: 0 5px;
+  width: 45%;
+  margin-bottom: 10px;
+}
+
 .tokenomics__content {
-  background-image: url('/Tokenomics.png');
+  background-image: url('/tokenomics-mobile.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.tokenomics__item-color {
+  display: block;
+  width: 40px;
+  height: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px 0px #3D576E4D;
+  box-shadow: 0px -2px 4px 0px #FFFFFF4D;
+}
+
+.tokenomics__item-label {
+  font-size: 12px;
+  line-height: 16px;
+  color: #000D22;
+  font-weight: 700;
+}
+
+@media (min-width: 991px) {
+  .tokenomics__content {
+    background-image: url('/Tokenomics.png');
+  }
 }
