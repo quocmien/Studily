@@ -151,7 +151,7 @@ const CardCountDown = () => {
     }
 
     return (
-        <div className="card__item-count-down">
+        <div className="card__item-count-down" key={interval}>
           <p className="card__time">
           {timeLeft[interval]}
           </p>
