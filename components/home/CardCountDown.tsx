@@ -359,7 +359,6 @@ const CardCountDown = () => {
         id="money-input"
         type="number"
         min={0}
-        defaultValue={1}
         value={quantity}
         onChange={onMoneyChange}
         placeholder="Enter amount to claim"
