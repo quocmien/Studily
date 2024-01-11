@@ -205,7 +205,7 @@ const CardCountDown = () => {
   ]);
 
   const onMoneyChange = (e: any) => {
-    const value = parseInt(e.target.value);
+    const value = parseInt(e);
     if (value > maxClaimable) {
       setQuantity(maxClaimable);
     } else if (value < 1) {
