@@ -1,7 +1,11 @@
 import CardCountDown from "./CardCountDown";
+import { useRef } from 'react';
+
 const BannerHome = () => {
+  const HomeSection = useRef(null);
+
   return (
-    <div className="container">
+    <div ref={HomeSection} className="container">
       <div className="grid grid-cols-12">
         <div className="col-span-12 md:col-span-8">
           <div className="banner__intro">

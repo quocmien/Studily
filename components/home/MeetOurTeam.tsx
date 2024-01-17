@@ -1,6 +1,6 @@
 const MeetOurTeam = () => {
   return (
-    <section className="meet-our-team">
+    <section className="meet-our-team mb-[110px] md:mb-[220px]">
       <div className="container">
         <div className="meet-our-team__intro text-center">
           <h3 className="meet-our-team__title">
