@@ -5,7 +5,7 @@ const Roadmap = () => {
         <h3 className="road-map__title w-full text-center --title mb-[20px]">
           Our Road
         </h3>
-        <p className="road-map__desc w-[590px] m-auto text-center --desc">
+        <p className="road-map__desc lg:w-[590px] m-auto text-center --desc">
           When it comes to data integrity, blockchain technology is an excellent way to make sure that all the information you need is provided.
         </p>
 
