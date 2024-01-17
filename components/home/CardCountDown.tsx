@@ -1,6 +1,6 @@
 "use client"
 
-import { Slider, Alert, Button, Flex, InputNumber, Progress } from 'antd';
+import { Slider, message, Button, Flex, InputNumber, Progress } from 'antd';
 import { useMemo, useState, useEffect } from 'react';
 import { BigNumber, utils } from 'ethers';
 import {
@@ -223,11 +223,11 @@ const CardCountDown = () => {
   }
 
   const marks = {
-    50: {
+    0: {
       style: {
         color: '#fff',
       },
-      label: <strong>50K BUSD</strong>,
+      label: <strong>0 BUSD</strong>,
     },
     100: {
       style: {
@@ -261,6 +261,8 @@ const CardCountDown = () => {
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
+  const openClaim = timeLeft.days <= 0 && timeLeft.hours <= 0 &&  timeLeft.minutes <= 0 && timeLeft.seconds
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
@@ -269,6 +271,21 @@ const CardCountDown = () => {
     return () => clearTimeout(timer);
   });
 
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const onSuccessClaim = (e: any) => {
+    messageApi.open({
+      type: 'success',
+      content: `Claim ${quantity} STY to success!`
+    })
+  }
+
+  const onErrorClaim = (e: any) => {
+    messageApi.open({
+      type: 'error',
+      content: `Error method claim!`
+    })
+  }
 
 
   return (
@@ -324,7 +341,7 @@ const CardCountDown = () => {
         <div className="card__progress-title">
           <span>Current Progress</span>
         </div>
-        <Slider disabled={true} marks={marks} defaultValue={50} />
+        <Slider disabled={true} marks={marks} defaultValue={0} />
       </div>
 
       <div className="card__token-info">
@@ -355,26 +372,43 @@ const CardCountDown = () => {
       </div>
 
       <div className="card__amount-token mt-[30px] md:mt-[60px]">
-      <InputNumber
-        id="money-input"
-        type="number"
-        min={0}
-        value={quantity}
-        onChange={onMoneyChange}
-        placeholder="Enter amount to claim"
-        className='w-full p-[5px] rounded-[8px] mb-[10px] md:mb-[20px]'
-      />
-       <Web3Button
-          className="card__btn-buy font-bold border
+        { contextHolder }
+        {
+          openClaim  ? 
+            <InputNumber
+              id="money-input"
+              type="number"
+              min={0}
+              value={quantity}
+              onChange={onMoneyChange}
+              placeholder="Enter amount to claim"
+              className='w-full p-[5px] rounded-[8px] mb-[10px] md:mb-[20px]'
+            />
+            : ''
+        }
+
+        {
+          openClaim ? 
+          
+            <Web3Button
+              className="card__btn-buy font-bold border
+                text-center w-full p-[5px] outline-white outline-[1px]
+                rounded-[6px] text-white"
+              contractAddress={tokenAddress}
+              action={(contract) => contract.erc20.claim(quantity)}
+              onSuccess={onSuccessClaim}
+              onError={onErrorClaim}
+            >
+              {buttonText}
+            </Web3Button>
+            : 
+            <Button className='card__btn-buy font-bold border
             text-center w-full p-[5px] outline-white outline-[1px]
-            rounded-[6px] text-white"
-          contractAddress={tokenAddress}
-          action={(contract) => contract.erc20.claim(quantity)}
-          onSuccess={() => alert('Claimed!')}
-          onError={(err) => alert(err)}
-        >
-          {buttonText}
-        </Web3Button>
+            rounded-[6px] text-white h-[43px]' disabled>
+              Buy token
+            </Button>
+        }
+        
       </div>
     </div>      
   )
