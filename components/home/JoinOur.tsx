@@ -2,9 +2,9 @@ const JoinOur = () => {
   return (
     <section id="join-our">
       <div className="container">
-        <div className="grid grid-cols-12">
-          <div className="col-span-6">
-            <div className="join-our__intro md:w-[600px]">
+        <div className="grid grid-cols-12 gap-[20px]">
+          <div className="col-span-12 md:col-span-6">
+            <div className="join-our__intro w-full lg:w-[83%]">
               <h3 className="join-our__title mb-[20px] --title">
                 Join Our Community
               </h3>
