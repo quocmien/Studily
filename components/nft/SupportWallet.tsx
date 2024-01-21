@@ -37,7 +37,7 @@ const SupportWallet = () => {
     }
   ]
   return (
-    <section className="support-wallet md:pt-[80px]">
+    <section className="support-wallet md:pt-[80px] pt-[40px]">
       <div className="support-wallet__intro">
         <h3 className="--title support-wallet__title text-center">
           Wallets We Support
@@ -48,13 +48,13 @@ const SupportWallet = () => {
       </div>
 
       <div className="support-wallet__list">
-        <ul className="support-wallet__list-container flex items-center w-full mt-[110px]">
+        <ul className="support-wallet__list-container flex flex-wrap items-center w-full mt-[110px] justify-center gap-[10px]">
           {
             listWallet.map(wallet => {
               return (
                 <li
                   key={wallet.id}
-                  className="support-wallet__item text-center flex-1 text-center"
+                  className="support-wallet__item text-center md:flex-1 text-center"
                 >
                   <div className="support-wallet__item-logo text-center">
                     <img className="m-auto" width="53px" src={wallet.image} alt={wallet.label} />

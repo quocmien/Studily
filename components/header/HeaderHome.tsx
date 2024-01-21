@@ -84,13 +84,7 @@ const HeaderHome = () => {
                       id={item.id}
                       className={`header__item-menu cursor-pointer ${activeMenu === item.id ? 'font-bold active' : ''}`}
                       >
-                      {
-                        item.link ?
-                        <a href={item.link}>{item.label}</a>
-                        : <span>{item.label}</span>
-
-                      }
-                     
+                      <a href={item.link ? item.link : `/#${item.id}`}>{item.label}</a>
                     </li>
                   )
                 })

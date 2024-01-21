@@ -25,7 +25,7 @@ const ExploreNFTs = () => {
   ]
   const categoryActive = 'developer'
   return (
-    <section className="explore-nfts md:pt-[82px]">
+    <section className="explore-nfts md:pt-[82px] pt-[40px]">
       <div className="explore-nfts__intro text-center">
         <h3 className="explore-nfts__title --title">
           Explore All NFTs
@@ -34,8 +34,8 @@ const ExploreNFTs = () => {
           Explore our newly released NFT collection
         </p>
       </div>
-      <div className="explore-nfts__container md:pt-[60px]">
-        <ul className="explore-nfts__categories-nft list flex">
+      <div className="explore-nfts__container pt-[30px] md:pt-[60px]">
+        <ul className="explore-nfts__categories-nft list flex gap-[10px] flex-wrap">
           {
             Categories.map(category => {
               return (
@@ -54,22 +54,22 @@ const ExploreNFTs = () => {
         </ul>
 
         <div className="explore-nfts__list-nft grid grid-cols-12 pt-[60px] gap-[20px]">
-          <div className="col-span-4">
+          <div className="col-span-6 md:col-span-4">
            <CardNFT parentClass="explore-nfts__item-nft" title={"Certificate of Excellence"} image={'/bg-eth.png'}/>
           </div>
-          <div className="col-span-4">
+          <div className="col-span-6 md:col-span-4">
            <CardNFT parentClass="explore-nfts__item-nft" title={"Certificate of Excellence"} image={'/bg-eth.png'}/>
           </div>
-          <div className="col-span-4">
+          <div className="col-span-6 md:col-span-4">
            <CardNFT parentClass="explore-nfts__item-nft" title={"Certificate of Excellence"} image={'/bg-eth.png'}/>
           </div>
-          <div className="col-span-4">
+          <div className="col-span-6 md:col-span-4">
            <CardNFT parentClass="explore-nfts__item-nft" title={"Certificate of Excellence"} image={'/bg-eth.png'}/>
           </div>
-          <div className="col-span-4">
+          <div className="col-span-6 md:col-span-4">
            <CardNFT parentClass="explore-nfts__item-nft" title={"Certificate of Excellence"} image={'/bg-eth.png'}/>
           </div>
-          <div className="col-span-4">
+          <div className="col-span-6 md:col-span-4">
            <CardNFT parentClass="explore-nfts__item-nft" title={"Certificate of Excellence"} image={'/bg-eth.png'}/>
           </div>
         </div>
