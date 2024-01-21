@@ -34,6 +34,11 @@ const HeaderHome = () => {
     {
       id: 'team',
       label: 'Team'
+    },
+    {
+      id: 'nft',
+      label: 'NFT Collection',
+      link: 'nft'
     }
   ]
   const [activeMenu, setActiveMenu] = useState('home');
@@ -59,7 +64,7 @@ const HeaderHome = () => {
     <header className="header">
       <div className="container">
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-5 md:col-span-3">
+          <div className="col-span-5 md:col-span-2">
             <div className="header__logo text-center w-[60px]">
               <img width="60px" height="60px" src="/logo.png" alt="Studily" className="logo" />
               <h3 className="hidden md:inline-block uppercase header__text-logo color-primary">
@@ -68,7 +73,7 @@ const HeaderHome = () => {
             </div>
           </div>
 
-          <div className="col-span-6 hidden md:flex">
+          <div className="col-span-8 items-center hidden md:flex">
             <ul className="list-none header__menu">
               {
                 menu.map(item => {
@@ -79,7 +84,13 @@ const HeaderHome = () => {
                       id={item.id}
                       className={`header__item-menu cursor-pointer ${activeMenu === item.id ? 'font-bold active' : ''}`}
                       >
-                      {item.label}
+                      {
+                        item.link ?
+                        <a href={item.link}>{item.label}</a>
+                        : <span>{item.label}</span>
+
+                      }
+                     
                     </li>
                   )
                 })
@@ -88,7 +99,7 @@ const HeaderHome = () => {
             </ul>
           </div>
 
-          <div className="col-span-7 md:col-span-3 header__right gap-[40px] items-center">
+          <div className="col-span-7 md:col-span-2 header__right gap-[40px] items-center">
             <Select
               className='
               outline button outline-primary outline-[1px]

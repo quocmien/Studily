@@ -117,3 +117,65 @@ body {
   line-height: 19px;
   letter-spacing: 0em;
 }
+
+.\--small {
+  font-size: 11px;
+}
+
+.\--title-page, .\--title-page strong {
+  font-size: 60px;
+  line-height: 72px;
+  font-weight: 700;
+}
+
+.\--background {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.color-primary {
+  color: #3C1053;
+}
+
+.card__background {
+  padding-top: 110%;
+}
+
+.card-nft {
+  padding: 20px;
+  border-radius: 24px;
+  background: linear-gradient(0deg, #0F151F, #0F151F),
+  linear-gradient(90deg, #AD5389 -12.5%, #3C1053 102.62%);
+}
+
+.card-nft__title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.page-nft__btn-register {
+  width: 25.8%;
+  padding: 14px 56px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #AD5389 -12.5%, #3C1053 102.62%);
+  color: #fff;
+}
+
+.explore-nfts__btn-category {
+  padding: 12px 33px;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 8px;
+}
+
+
+.explore-nfts__item-category button {
+  transition: all ease-in-out .1s;
+}
+
+.explore-nfts__item-category.\--active button, .explore-nfts__item-category button:hover{
+  background: linear-gradient(90deg, #AD5389 -12.5%, #3C1053 102.62%);
+  color: #fff;
+}
