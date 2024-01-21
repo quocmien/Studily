@@ -40,6 +40,7 @@ const ExploreNFTs = () => {
             Categories.map(category => {
               return (
                 <li
+                  key={category.id}
                   id={category.id}
                   className={`explore-nfts__item-category flex-1 text-center ${categoryActive === category.id ? '--active' : ''}`}
                 >
