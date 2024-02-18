@@ -1,4 +1,6 @@
-import CardNFT from "../../components/nft/CardNFT";
+import React, { useState } from 'react';
+import CertificateNFT from "./CertificateNFT";
+import ModalResignNFT from "./ModalResignNFT";
 
 const ExploreNFTs = () => {
   const Categories = [
@@ -24,6 +26,35 @@ const ExploreNFTs = () => {
     }
   ]
   const categoryActive = 'developer'
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onResignNFT = (e: any) => {
+    setIsOpen(true)
+  }
+
+  const onCloseModal = (value: boolean) => {
+    setIsOpen(value)
+  }
+
+  const ListNFT = [
+    {
+      title: 'Certificate of Excellence',
+      image: '/bg-btc.png',
+      id: 'developer'
+    },
+    {
+      title: 'Certificate of Excellence',
+      image: '/bg-btc.png',
+      id: 'developer'
+    }
+  ]
+
+  const NFTActive = {
+    title: 'Certificate of Excellence',
+    image: '/bg-btc.png',
+    id: 'developer'
+  }
+
   return (
     <section className="explore-nfts md:pt-[82px] pt-[40px]">
       <div className="explore-nfts__intro text-center">
@@ -54,26 +85,29 @@ const ExploreNFTs = () => {
         </ul>
 
         <div className="explore-nfts__list-nft grid grid-cols-12 pt-[60px] gap-[20px]">
-          <div className="col-span-6 md:col-span-4">
-           <CardNFT parentClass="explore-nfts__item-nft" title={"Certificate of Excellence"} image={'/bg-eth.png'}/>
-          </div>
-          <div className="col-span-6 md:col-span-4">
-           <CardNFT parentClass="explore-nfts__item-nft" title={"Certificate of Excellence"} image={'/bg-eth.png'}/>
-          </div>
-          <div className="col-span-6 md:col-span-4">
-           <CardNFT parentClass="explore-nfts__item-nft" title={"Certificate of Excellence"} image={'/bg-eth.png'}/>
-          </div>
-          <div className="col-span-6 md:col-span-4">
-           <CardNFT parentClass="explore-nfts__item-nft" title={"Certificate of Excellence"} image={'/bg-eth.png'}/>
-          </div>
-          <div className="col-span-6 md:col-span-4">
-           <CardNFT parentClass="explore-nfts__item-nft" title={"Certificate of Excellence"} image={'/bg-eth.png'}/>
-          </div>
-          <div className="col-span-6 md:col-span-4">
-           <CardNFT parentClass="explore-nfts__item-nft" title={"Certificate of Excellence"} image={'/bg-eth.png'}/>
-          </div>
+          {
+            ListNFT.map(nft => {
+              return (
+                <div
+                  key={nft.id}
+                  className="col-span-6 md:col-span-4"
+                >
+                  <CertificateNFT
+                      parentClass="explore-nfts__item-nft"
+                      title={nft.title}
+                      image={nft.image}
+                      id={nft.id}
+                      onResign={onResignNFT}
+                    />
+                  </div>
+              )
+            })
+          }
+          
         </div>
       </div>
+
+      <ModalResignNFT nft={NFTActive} open={isOpen} onClose={onCloseModal} />
     </section>
   )
 }

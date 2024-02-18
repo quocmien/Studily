@@ -178,3 +178,14 @@ body {
   background: linear-gradient(90deg, #AD5389 -12.5%, #3C1053 102.62%);
   color: #fff;
 }
+
+.certificate-nft {
+  border: 1px solid #B0BFD1;
+  background-color: #fff
+  ;
+}
+
+.certificate-nft__btn-resign {
+  padding: 9px 19px;
+  /* border: 1px solid transparent */
+}
