@@ -70,7 +70,7 @@ const ModalResignNFT = ({ open, onClose, nft }: IProps) => {
 
   const handlePreview = async (file: UploadFile) => {
     if (!file.url && !file.preview) {
-      file.preview = await getBase64(file.originFileObj as FileType);
+      // file.preview = await getBase64(file.originFileObj as FileType);
     }
 
     setPreviewImage(file.url || (file.preview as string));
